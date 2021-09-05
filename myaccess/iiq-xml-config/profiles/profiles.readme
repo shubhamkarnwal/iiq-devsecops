@@ -1,0 +1,15 @@
+Maven build profiles can be used to specify environment specific builds. The archetype ships with 2 profiles; sandbox and dev.
+The sandbox profile is the default; you may build for the dev profile by specifying the profile with the -P switch.
+
+To create additional profiles:
+1. Create a directory under the profiles directory. The convention of directory name as env-<environment id> is
+   recommended.
+
+2. Duplicate the files present under the env-sandbox directory under the new profile directory. Edit the duplicated
+   files to become environment specific.
+
+3. Edit the POM file for the root 'identityiq-deployment' module and add the profile in the profiles section. You may,
+   optionally, also set which profile executes by default.
+
+-------------------
+See more at https://maven.apache.org/guides/introduction/introduction-to-profiles.html

@@ -1,0 +1,38 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd
+http://maven.apache.org/ASSEMBLY/2.0.0 ">
+    <id>webapp-files</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>WEB-INF/lib</outputDirectory>
+            <includes>
+                <include>${project.groupId}:${project.artifactId}:jar</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+    <fileSets>
+        <!-- Create an assembly of files to be deployed to the web application -->
+        <fileSet>
+            <directory>${project.basedir}/src/main/webapp</directory>
+            <outputDirectory>${file.separator}</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/profiles/${build.profile.id}</directory>
+            <outputDirectory>WEB-INF/classes</outputDirectory>
+            <includes>
+                <include>log4j.properties</include>
+                <include>iiq.properties</include>
+                <include>iiq.cfg</include>
+                <include>iiq.dat</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

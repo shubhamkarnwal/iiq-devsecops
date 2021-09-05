@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Plugin PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Plugin certificationLevel="None"
+        name="DataExportPlugin"
+        displayName="Data Export Plugin"
+        minSystemVersion="8.0"
+        maxSystemVersion="8.1"
+        version="0.0.1">
+    <Attributes>
+        <Map/>
+    </Attributes>
+</Plugin>

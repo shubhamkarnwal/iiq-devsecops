@@ -1,0 +1,30 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd
+http://maven.apache.org/ASSEMBLY/2.0.0 ">
+    <id>config-files</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <!-- Create an assembly of config XML files for import -->
+        <fileSet>
+            <directory>${project.basedir}/target/config</directory>
+            <outputDirectory>custom</outputDirectory>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+            <excludes>
+                <exclude>sp.init-custom.xml</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/target/config</directory>
+            <outputDirectory>${file.separator}</outputDirectory>
+            <includes>
+                <include>**/sp.init-custom.xml</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
